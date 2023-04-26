@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>is-sgx-available – Check environment for SGX compatibility &mdash; Gramine  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/gramine.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/gramine_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Ready-made protected applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../curated-installation.html">Ready-made confidential protected images</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protect your container</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gsc-installation.html">Gramine Shielded Containers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protect your application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Gramine installation options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment-setup.html">Set up the Gramine environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run-sample-application.html">Run a sample application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Develop Gramine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devel/building.html">Build and install Gramine from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/debugging.html">Debugging Gramine with GDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/new-syscall.html">Implementing new system call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/packaging.html">Packaging and distributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/features.html">Gramine features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pal/host-abi.html">PAL host ABI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts-index.html">Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute to Gramine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devel/contributing.html">Contributing to Gramine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/onboarding.html">Onboarding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/DCO/index.html">Developer Certificate of Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/setup.html">Development setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/coding-style.html">Coding style guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/howto-doc.html">How to write documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-team.html">Management Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gramine-users.html">Users of Gramine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gramine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong class="program">is-sgx-available</strong> – Check environment for SGX compatibility</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/manpages/is-sgx-available.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="is-sgx-available-check-environment-for-sgx-compatibility">
+<h1><strong class="program">is-sgx-available</strong> – Check environment for SGX compatibility<a class="headerlink" href="#is-sgx-available-check-environment-for-sgx-compatibility" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong class="command">is-sgx-available</strong> [<em>OPTIONS</em>]</p>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><cite>is-sgx-available</cite> checks the CPU and operating system for <a class="reference internal" href="../glossary.html#term-sgx"><span class="xref std std-term">SGX</span></a>
+compatibility. A detailed report is printed unless suppressed by the
+<a class="reference internal" href="#cmdoption-is-sgx-available-quiet"><code class="xref std std-option docutils literal notranslate"><span class="pre">--quiet</span></code></a> option.</p>
+</div>
+<div class="section" id="command-line-arguments">
+<h2>Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-is-sgx-available-quiet">
+<code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-is-sgx-available-quiet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suppress displaying detailed report. See exit status for the result.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="exit-status">
+<h2>Exit status<a class="headerlink" href="#exit-status" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>0</dt>
+<dd>SGX version 1 is available and ready</dd>
+<dt>1</dt>
+<dd>No CPU cupport</dd>
+<dt>2</dt>
+<dd>No BIOS support</dd>
+<dt>3</dt>
+<dd>SGX Platform Software (<a class="reference internal" href="../sgx-intro.html#term-psw"><span class="xref std std-term">PSW</span></a>) is not installed</dd>
+<dt>4</dt>
+<dd>The <code class="docutils literal notranslate"><span class="pre">aesmd</span></code> <a class="reference internal" href="../sgx-intro.html#term-psw"><span class="xref std std-term">PSW</span></a> daemon is not installed</dd>
+</dl>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ is-sgx-available
+SGX supported by CPU: <span class="nb">true</span>
+SGX1 <span class="o">(</span>ECREATE, EENTER, ...<span class="o">)</span>: <span class="nb">true</span>
+SGX2 <span class="o">(</span>EAUG, EACCEPT, EMODPR, ...<span class="o">)</span>: <span class="nb">false</span>
+Flexible Launch Control <span class="o">(</span>IA32_SGXPUBKEYHASH<span class="o">{</span><span class="m">0</span>..3<span class="o">}</span> MSRs<span class="o">)</span>: <span class="nb">false</span>
+SGX extensions <span class="k">for</span> virtualizers <span class="o">(</span>EINCVIRTCHILD, EDECVIRTCHILD, ESETCONTEXT<span class="o">)</span>: <span class="nb">false</span>
+Extensions <span class="k">for</span> concurrent memory management <span class="o">(</span>ETRACKC, ELDBC, ELDUC, ERDINFO<span class="o">)</span>: <span class="nb">false</span>
+CET enclave attributes support <span class="o">(</span>See Table <span class="m">37</span>-5 <span class="k">in</span> the SDM<span class="o">)</span>: <span class="nb">false</span>
+Key separation and sharing <span class="o">(</span>KSS<span class="o">)</span> support <span class="o">(</span>CONFIGID, CONFIGSVN, ISVEXTPRODID, ISVFAMILYID report fields<span class="o">)</span>: <span class="nb">false</span>
+Max enclave size <span class="o">(</span><span class="m">32</span>-bit<span class="o">)</span>: 0x80000000
+Max enclave size <span class="o">(</span><span class="m">64</span>-bit<span class="o">)</span>: 0x1000000000
+EPC size: 0x5d80000
+SGX driver loaded: <span class="nb">true</span>
+AESMD installed: <span class="nb">true</span>
+SGX PSW/libsgx installed: <span class="nb">true</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, Gramine Contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>gramine-sgx-sign – Gramine SIGSTRUCT generator &mdash; Gramine  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/gramine.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/gramine_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Ready-made protected applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../curated-installation.html">Ready-made confidential protected images</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protect your container</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gsc-installation.html">Gramine Shielded Containers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protect your application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Gramine installation options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment-setup.html">Set up the Gramine environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run-sample-application.html">Run a sample application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Develop Gramine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devel/building.html">Build and install Gramine from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/debugging.html">Debugging Gramine with GDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/new-syscall.html">Implementing new system call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/packaging.html">Packaging and distributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/features.html">Gramine features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pal/host-abi.html">PAL host ABI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts-index.html">Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute to Gramine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devel/contributing.html">Contributing to Gramine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/onboarding.html">Onboarding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/DCO/index.html">Developer Certificate of Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/setup.html">Development setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/coding-style.html">Coding style guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devel/howto-doc.html">How to write documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../management-team.html">Management Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gramine-users.html">Users of Gramine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gramine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong class="program">gramine-sgx-sign</strong> – Gramine SIGSTRUCT generator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/manpages/gramine-sgx-sign.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gramine-sgx-sign-gramine-sigstruct-generator">
+<span id="gramine-sgx-sign"></span><h1><strong class="program">gramine-sgx-sign</strong> – Gramine SIGSTRUCT generator<a class="headerlink" href="#gramine-sgx-sign-gramine-sigstruct-generator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong class="command">gramine-sgx-sign</strong> [<em>OPTION</em>]… –output output_manifest
+–key key_file –manifest manifest_file</p>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">gramine-sgx-sign</strong> is used to expand Trusted Files and generate
+signature file for given input manifest and libpal file (main Gramine binary).</p>
+</div>
+<div class="section" id="command-line-arguments">
+<h2>Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-gramine-sgx-sign-output">
+<code class="descname">--output</code><code class="descclassname"> output_manifest</code><code class="descclassname">, </code><code class="descname">-o</code><code class="descclassname"> output_manifest</code><a class="headerlink" href="#cmdoption-gramine-sgx-sign-output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the output manifest file (with Trusted Files expanded).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-gramine-sgx-sign-key">
+<code class="descname">--key</code><code class="descclassname"> key_file</code><code class="descclassname">, </code><code class="descname">-k</code><code class="descclassname"> key_file</code><a class="headerlink" href="#cmdoption-gramine-sgx-sign-key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the private key used for signing.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-gramine-sgx-sign-manifest">
+<code class="descname">--manifest</code><code class="descclassname"> manifest_file</code><code class="descclassname">, </code><code class="descname">-m</code><code class="descclassname"> manifest_file</code><a class="headerlink" href="#cmdoption-gramine-sgx-sign-manifest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input manifest file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-gramine-sgx-sign-libpal">
+<code class="descname">--libpal</code><code class="descclassname"> libpal_path</code><code class="descclassname">, </code><code class="descname">-l</code><code class="descclassname"> libpal_path</code><a class="headerlink" href="#cmdoption-gramine-sgx-sign-libpal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to libpal file (main Gramine binary).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-gramine-sgx-sign-sigfile">
+<code class="descname">--sigfile</code><code class="descclassname"> sigfile</code><code class="descclassname">, </code><code class="descname">-s</code><code class="descclassname"> sigfile</code><a class="headerlink" href="#cmdoption-gramine-sgx-sign-sigfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the output file containing SIGSTRUCT. If not provided,
+<cite>manifest_file</cite> will be used with “.manifest” (if present) removed from
+the end and with “.sig” appended.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-gramine-sgx-sign-depfile">
+<code class="descname">--depfile</code><code class="descclassname"> depfile</code><a class="headerlink" href="#cmdoption-gramine-sgx-sign-depfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a file that describes the dependencies for the output manifest and
+SIGSTRUCT, i.e. files that should trigger rebuilding if they’re modified.
+The dependency file is in Makefile format, and is suitable for using in
+build systems (Make, Ninja).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-gramine-sgx-sign-verbose">
+<code class="descname">--verbose</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-gramine-sgx-sign-verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print details to standard output. This is the default.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-gramine-sgx-sign-quiet">
+<code class="descname">--quiet</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">-q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-gramine-sgx-sign-quiet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Don’t print details to standard output.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, Gramine Contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

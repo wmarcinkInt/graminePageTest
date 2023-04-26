@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Gramine Documentation &mdash; Gramine  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/gramine.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ready-made confidential protected images" href="curated-installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#">
+          
+
+          
+            
+            <img src="_static/gramine_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Ready-made protected applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="curated-installation.html">Ready-made confidential protected images</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protect your container</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gsc-installation.html">Gramine Shielded Containers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protect your application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Gramine installation options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment-setup.html">Set up the Gramine environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-sample-application.html">Run a sample application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Develop Gramine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="devel/building.html">Build and install Gramine from source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/debugging.html">Debugging Gramine with GDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/new-syscall.html">Implementing new system call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/packaging.html">Packaging and distributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/features.html">Gramine features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pal/host-abi.html">PAL host ABI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts-index.html">Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute to Gramine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="devel/contributing.html">Contributing to Gramine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/onboarding.html">Onboarding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/DCO/index.html">Developer Certificate of Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/setup.html">Development setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/coding-style.html">Coding style guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devel/howto-doc.html">How to write documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="management-team.html">Management Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gramine-users.html">Users of Gramine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Gramine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Gramine Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gramine-documentation">
+<h1>Gramine Documentation<a class="headerlink" href="#gramine-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Gramine is a lightweight guest OS that’s designed to run a single Linux
+application with minimal host requirements.
+Gramine can run applications in an isolated environment with benefits comparable
+to running a complete OS in a virtual machine, including guest customization, ,
+ease of porting to different host OSs, and process migration.</p>
+<p>Gramine supports running Linux applications using the Intel Software Guard
+Extensions, or Intel SGX. For mor information, refer to the <a class="reference internal" href="sgx-intro.html"><span class="doc">Introduction to SGX</span></a>
+article.</p>
+<p>This page provides an overview of this site.
+Each section is outlined below with a brief explanation and links to specific
+sections.
+This page mimics the table of contents in the left column.</p>
+<div class="section" id="gramine-deployment-options">
+<h2>Gramine deployment options<a class="headerlink" href="#gramine-deployment-options" title="Permalink to this headline">¶</a></h2>
+<p>There are three deployment options for Gramine—each option is described below.
+There is also one option to help develop Gramine.</p>
+<div class="section" id="ready-made-protected-applications">
+<h3>Ready-made protected applications<a class="headerlink" href="#ready-made-protected-applications" title="Permalink to this headline">¶</a></h3>
+<p>Confidential compute images are ready-made solutions for popular open source
+projects such as <a class="reference external" href="https://github.com/gramineproject/contrib/tree/master/Curated-Apps/workloads/pytorch">PyTorch</a>
+and <a class="reference external" href="https://github.com/gramineproject/contrib/tree/master/Curated-Apps/workloads/redis">Redis</a>.
+These images enable you to customize your environment through interactive
+scripts. The result is an image that includes your specific machine-learning
+application, common dependencies, and a manifest file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">These confidential compute images only run on machines that support
+Intel SGX.</p>
+</div>
+<p>See the <a class="reference internal" href="curated-installation.html"><span class="doc">Ready-made confidential protected images</span></a> article for more information.</p>
+</div>
+<div class="section" id="protect-your-container">
+<h3>Protect your container<a class="headerlink" href="#protect-your-container" title="Permalink to this headline">¶</a></h3>
+<p>Docker images are used to run applications in the cloud.
+The Gramine Shielded
+Container tool transforms a Docker image into a graminized image that includes
+the Gramine Library OS and Intel SGX related information.
+It enables you to run an application on a Docker image and keep it protected.</p>
+<ul class="simple">
+<li><a class="reference internal" href="gsc-installation.html"><span class="doc">Gramine Shielded Containers</span></a> - Get an overview of the installation process of a
+Gramine Shielded Container.</li>
+<li><a class="reference external" href="https://gramine.readthedocs.io/projects/gsc/en/latest/">Build a Gramine Docker image</a> -
+Build a Docker image that contains the Gramine functionality.</li>
+<li><a class="reference external" href="https://github.com/gramineproject/gsc">Download the Gramine Shielded Container tool</a> -
+Protect the Docker image containing the application you want to protect.</li>
+</ul>
+</div>
+<div class="section" id="protect-your-application">
+<h3>Protect your application<a class="headerlink" href="#protect-your-application" title="Permalink to this headline">¶</a></h3>
+<p>Use this option to protect an exiting application with Gramine.
+Little to no addition modification of your application is needed.</p>
+<p>These are the processes to follow protect your application with Gramine:</p>
+<ul class="simple">
+<li><a class="reference internal" href="quickstart.html"><span class="doc">Install Gramine</span></a> - Install Gramine from binaries on to the
+various supported versions of Ubuntu or RHEL 8.</li>
+<li><a class="reference internal" href="environment-setup.html"><span class="doc">Set up the environment</span></a> - Set up the Gramine
+environment to work with or without SGX and prepare a signing key.</li>
+<li><a class="reference internal" href="run-sample-application.html"><span class="doc">Run a sample application</span></a> - Run a sample
+application to ensure your environment is running correctly.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="develop-gramine">
+<h2>Develop Gramine<a class="headerlink" href="#develop-gramine" title="Permalink to this headline">¶</a></h2>
+<p>This section describes how to develop Gramine.
+It contains instructions on how to install Gramine from binaries, install
+dependencies, set up debugging and other processes necessary for Gramine
+development.</p>
+<ul class="simple">
+<li><a class="reference internal" href="devel/building.html"><span class="doc">Build Gramine from source files</span></a> - Build Gramine and
+ensure all the dependencies installed with proper drivers.
+This option requires a more work but allows you to choose build options.</li>
+<li><a class="reference internal" href="devel/debugging.html"><span class="doc">Set up Debugging</span></a> - Configure Gramine with Gnu Debugger
+(GDB) and setup compiling optimizations.</li>
+<li><a class="reference internal" href="devel/new-syscall.html"><span class="doc">Implement a new system call</span></a> - Define the interface
+of the system call, add, import, and Implement new PAL calls if needed.</li>
+</ul>
+</div>
+<div class="section" id="contribute-to-gramine">
+<h2>Contribute to Gramine<a class="headerlink" href="#contribute-to-gramine" title="Permalink to this headline">¶</a></h2>
+<p>We encourage anyone who is interested to contribute to Gramine.
+We offer procedures and user groups that to help you get started.</p>
+<p>These articles contain helpful material for users who want to contribute to
+Gramine development.</p>
+<ul class="simple">
+<li><a class="reference internal" href="devel/contributing.html"><span class="doc">Contributing to Gramine</span></a> - The Contributing to Gramine page outlines the
+procedures for performing pull requests, reviews, and regression tests.</li>
+<li><a class="reference internal" href="devel/onboarding.html"><span class="doc">Onboarding</span></a> - This page describes the knowledge needed to
+efficiently contribute high-quality PRs to the Gramine project.
+This page also describes typical flows that Gramine developers should follow
+to make the process of PR review consistent for everyone involved.</li>
+<li><a class="reference internal" href="devel/DCO/index.html"><span class="doc">Developer Certificate of Origin</span></a> - Affirm that the source code you will submit was
+originated by you and/or that you have permission to submit it to the Gramine project.</li>
+<li><a class="reference internal" href="devel/setup.html"><span class="doc">Development setup</span></a> - Learn the Emacs and Vim configurations used for Gramine.</li>
+<li><a class="reference internal" href="devel/coding-style.html"><span class="doc">Coding style guidelines</span></a> - This document describes coding conventions and
+formatting styles we use in Gramine.
+All newly committed code must conform to them to pass a review.</li>
+<li><a class="reference internal" href="devel/howto-doc.html"><span class="doc">How to write documentation</span></a> - This section describes how the Gramine documentation
+is constructed and provides directions on how to contribute to it.</li>
+<li><a class="reference external" href="https://groups.google.com/g/gramine-users">Gramine User Groups</a> - The
+Gramine user-groups page lists the user groups you can join to help you get up
+to speed with developing Gramine.</li>
+</ul>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>The Gramine project provides resources to help you understand and develop it.
+The resources page contains a list of maintainers, users, and a glossary to help</p>
+<blockquote>
+<div>you with any questions you may have.</div></blockquote>
+<ul class="simple">
+<li><a class="reference internal" href="management-team.html"><span class="doc">Management Team</span></a> - This page list the people managing the maintenance of
+Gramine</li>
+<li><a class="reference internal" href="gramine-users.html"><span class="doc">Users of Gramine</span></a> - See what companies are using Gramine for their
+confidential computing needs</li>
+<li><a class="reference internal" href="glossary.html"><span class="doc">Glossary</span></a> - Become familiar with the terms used for Gramine</li>
+</ul>
+</div>
+<div class="section" id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>For any questions, please send an email to <a class="reference external" href="mailto:users&#37;&#52;&#48;gramineproject&#46;io">users<span>&#64;</span>gramineproject<span>&#46;</span>io</a>
+or join us on our <a class="reference external" href="https://gitter.im/gramineproject/community">Gitter chat</a>.</p>
+<p>For bug reports, post an issue on our GitHub repository:
+<a class="reference external" href="https://github.com/gramineproject/gramine/issues">https://github.com/gramineproject/gramine/issues</a>.</p>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="curated-installation.html" class="btn btn-neutral float-right" title="Ready-made confidential protected images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, Gramine Contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
